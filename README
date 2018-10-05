@@ -1,0 +1,172 @@
+/*
+ * Filename: README
+ * Author: Yuren Dong
+ * Userid: cs30fiy
+ * Description: This is the README file of PA 0 for CSE30
+ * Date: OCT 4
+ * Sources of Help: TAs in labs
+ */
+
+  This PA program is a program that will print out an array forwards, every
+  element backwards, find the max value of the array and find the average
+  of 4 numbers.
+
+  To compile the program, just type "make", then the make file will compile the
+  program for users.
+
+  To run the program, just type "./a.out" in command line, and the result will
+  be shown on the screen.
+
+  The normal output will be shown below:
+
+Program starting...
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+121
+144
+169
+196
+
+196
+144
+100
+64
+36
+16
+4
+0
+
+The maximum value in the array is 196
+The integer average of 5, 15, 32, and -2 is 12
+  
+
+
+README questions:
+
+1.Why is it an academic integrity violation to turn in code written by someone
+other than you or your partner?
+
+Because it is an academic integrity violation to receive help from unauthorized
+sources to finish coding homework. Students are required to finish homework on
+their own. Thus, turn in others' code is an academic integrity violation.
+
+
+
+2. What are the compiler warnings and errors you fixed? Enumerate them in this 
+section, along with information about where they occurred.
+
+For compilation errors:
+
+1: In line 15 in pa0.c, I changed "pa0" to "pa0.h". There're not a file named
+pa0. It should be pa0.h instead, so that it could be included in pa0.c
+
+2: In line 45 in pa0.c, I removed the extra ";" before the curly brace. Because
+for a standard for loop, it should be like for(...;...;...){...}
+
+3: In line 60 in pa0.c, "v4" is in quotes. However, it should be a integer
+variable, so I removed the quotes so as to correct this variable's data type.
+
+4: In line 26 in findMax.c, I changed "i = 0" to "int i = 0". Because variable
+i has never been declared in that function before. Plus, i is also not a
+constant declared. So it should be declared first.
+
+5: In line 25 in pa0.h, I changed "int array" into "int array[]". Because
+array[] is an array pointer, and the variable that should be passed in here is
+array type. So I changed the type of parameter.
+
+For logic error:
+
+1: In line 26 in printEveryOtherReversed.c, I changed "i > 0" to "i >= 0".
+Because There are chances that we need to print out the variable at index 0,
+but original code would exclude this situation.
+
+2: In line 46 in avg4.s, I changed "add r0, r0, r0" to "add r0, r0, r1". Because
+we are adding r1 and r0 and putting the results in r0 in this step, so there
+should be an r1 here.
+
+3: In line 26 in initArray.c, I added "i++;" into the loop. A while loop needs 
+its counter to do self-increment to avoid infinite loop.
+
+
+
+3. Line 30 in pa0.c is printed, which is printf("Program starting...\n");
+
+4. After typing nexti, following information is shown:
+
+0x000104f8      30        printf("Program starting...\n");
+1: x/i $pc
+=> 0x104f8 <main+16>:   bl      0x1031c
+
+Because nexti is used to execute the next machine instruction, so this command
+went through the break that was set at line 30 in pa0.c. Line 30 is shown here
+because it is the command that will be executed.
+
+5: I'm in function avg4.
+
+6: 20
+
+7: 52
+
+8: 12. "p $r0" and "info registers" or "i r"
+
+9: average
+
+10: The address is "0x7efffae8", and the value stored in it is 0x000000c4.
+
+11: A breakpoint is a break that we insert in parts of the code. When we are 
+using gdb to debug, program will automatically stop while reaching a 
+breakpoint. In this way, we could debug our programs separately and it will be
+easier to figure out where the bug is.
+
+12: foobar
+
+13: It is the stack pointer that stores addresses.
+
+14: printf((b+b)+plus+b);
+
+15: In command mode
+    i: enter the insert mode
+    y: yank
+    c: cut
+    p: paste
+
+16: Yues I did. The output is shown as below:
+
+Program starting...
+0
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+121
+144
+169
+196
+
+196
+144
+100
+64
+36
+16
+4
+0
+
+The maximum value in the array is 196
+The integer average of 5, 15, 32, and -2 is 12
+
